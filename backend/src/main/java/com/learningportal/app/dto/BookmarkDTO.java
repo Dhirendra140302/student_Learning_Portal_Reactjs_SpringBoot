@@ -1,0 +1,24 @@
+package com.learningportal.app.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class BookmarkDTO {
+    private Long id;
+    private String name;
+    private String notes;
+    private Double timestampSeconds;
+    private Long videoId;
+    private String videoTitle;
+    private String videoThumbnailUrl;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+}
