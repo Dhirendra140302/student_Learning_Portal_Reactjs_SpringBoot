@@ -1,29 +1,62 @@
 # Learning Portal
 
-This repository contains a simple learning portal application built with ReactJS for the frontend and Spring Boot for the backend.
+A demo learning portal application with a React frontend and Spring Boot backend.
 
-## Project Structure
+![Learning Portal Login](docs/screenshot.png)
 
-- `backend/` - Spring Boot REST API using Java 25, Spring Boot 3.2.4, H2 database, Spring Security, and JWT authentication.
-- `frontend/` - React application created with Create React App, using React Router and Axios.
+## Overview
+
+This project includes:
+- `backend/` — Spring Boot REST API with JWT authentication, user registration, video list, bookmarks, and progress tracking.
+- `frontend/` — React app built with Create React App, React Router, Axios, and a simple student dashboard.
+
+## Features
+
+- Register and login with JWT-secured API calls
+- Video browsing and details
+- Bookmark videos for later review
+- Track watch progress per user
+- In-memory H2 database for easy development
+- Seeded demo accounts for quick access
+
+## Seeded Demo Accounts
+
+Use one of the preloaded users:
+
+- `admin@gvcc.edu` / `admin123`
+- `dhirendra@gvcc.edu` / `student123`
+- `bob@gvcc.edu` / `student123`
 
 ## Prerequisites
 
 - Java 22+ installed
-- Maven installed or use the provided backend `run-backend.bat`
+- Maven installed or use the provided `backend/run-backend.bat`
 - Node.js 24+ installed
 - npm installed
 
-## Local Setup
+## Run Locally
 
 ### Backend
 
+Open a PowerShell terminal and run:
+
 ```powershell
 cd backend
-./run-backend.bat
+.\run-backend.bat
 ```
 
+If you have Maven on your PATH, you can also run:
+
+```powershell
+cd backend
+mvn spring-boot:run
+```
+
+The backend starts on `http://localhost:8080`.
+
 ### Frontend
+
+Open a separate terminal and run:
 
 ```powershell
 cd frontend
@@ -31,21 +64,25 @@ npm install
 npm start
 ```
 
-The frontend proxies API calls to `http://localhost:8080`.
+The frontend starts on `http://localhost:3000` and proxies API requests to `http://localhost:8080`.
 
-## Available Scripts
+## Project Structure
+
+- `backend/src/main/java` — Java controllers, services, entities, repositories, and security
+- `backend/src/main/resources/application.properties` — Spring Boot configuration and H2 settings
+- `frontend/src` — React pages, components, context, hooks, and service utilities
+- `frontend/public` — static public files and HTML shell
+
+## Useful Scripts
 
 ### Frontend
-
-- `npm start` - Run the React development server
-- `npm run build` - Build the React production bundle
-- `npm test` - Run frontend tests (if configured)
+- `npm start` — Run development server
+- `npm run build` — Create production build
 
 ### Backend
-
-- `mvn spring-boot:run` - Start the Spring Boot backend
+- `mvn spring-boot:run` — Run the Spring Boot application
 
 ## Notes
 
-- The application uses H2 in-memory database for development.
-- A local `run-backend.bat` script is included to set `JAVA_HOME` and Maven if installed in the user folder.
+- The backend uses H2 in-memory database, so seeded data resets when the app restarts.
+- The `docs/screenshot.png` file shows the app login screen while running.
