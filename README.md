@@ -2,7 +2,23 @@
 
 A demo learning portal application with a React frontend and Spring Boot backend.
 
-![Learning Portal Login](docs/screenshot.png)
+## Screenshots
+
+Login screen:
+
+![Login Screen](docs/login-screenshot.png)
+
+Dashboard:
+
+![Dashboard](docs/dashboard-screenshot.png)
+
+Bookmarks screen:
+
+![Bookmarks](docs/screenshot-bookmarks.png)
+
+Video player screen:
+
+![Video Player](docs/screenshot-video-player.png)
 
 ## Overview
 
